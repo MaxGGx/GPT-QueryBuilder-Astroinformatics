@@ -9,6 +9,16 @@
 - Acceder a "localhost:8000/inicio" y verificar que aprezca "OK"
 - Comenzar a utilizar la API
 
+#### Manejo de base de datos:
+- Se puede manejar o eliminar mensajes de la base de datos, utilizando la interfaz visual, con la API corriendo acceder al link localhost:8000/admin
+- Acceder con las credenciales:
+- - User: dev
+- - Pass: dev
+- Manejar el sistema
+- Si no aparece registrado el usuario, terminar la ejecución de la API y ejecutar el siguiente comando: `py manage.py createsuperuser`
+- Seguir el procedimiento y crear las credenciales dev dev
+- Repetir los pasos anteriores para acceder.
+
 ### Instrucciones para frontend:
 
 - Se requiere tener instalado nodeJS v18+, junto a yarn para el manejo de paquetes
