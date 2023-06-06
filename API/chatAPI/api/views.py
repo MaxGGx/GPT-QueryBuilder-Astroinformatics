@@ -15,6 +15,7 @@ class ConsultaGPT(APIView):
     serializer_class = MensajesSerializer
     def post(self, request, format=None):
         if request.method == "POST":
+            print(request.POST);
             mensaje = request.POST.get('mensaje',None)
             id_chat = request.POST.get('id_chat',None)
             if(id_chat != None):

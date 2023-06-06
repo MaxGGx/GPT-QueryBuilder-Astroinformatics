@@ -30,7 +30,7 @@ const Navbar = ({pages, isDarkMode, toggleDarkMode}) => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
-          <a href="/"><img src="https://media.discordapp.net/attachments/770845021288398878/1113580675413573702/Sin_titulo.png" width="75" height="auto"/></a>
+          <a href="/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_of_the_Astropy_Project.png" width="75" height="auto"/></a>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
