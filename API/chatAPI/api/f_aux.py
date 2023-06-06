@@ -42,3 +42,7 @@ def makeGPTquery(chat,u_message):
     nMessage.save()
 
     return nMessage
+
+# TODO: Mensaje es el string de respuesta que entrega GPT
+def exec_query(mensaje):
+    return 0

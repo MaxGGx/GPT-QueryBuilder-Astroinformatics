@@ -39,4 +39,24 @@ class ConsultaGPT(APIView):
                 print("Nuevo chat: ", nChat.id)
         serializer = MensajesSerializer(respuesta)
         return Response(serializer.data)
+    
+class Query(APIView):
+    serializer_class = MensajesSerializer
+    def post(self, request, format=None):
+        if request.method == "POST":
+            #mensaje = request.POST.get('mensaje',None)
+            id_chat = request.POST.get('id_chat',None)
+            if(id_chat != None):
+                chat = Chat.objects.get(id = id_chat)
+                nMessage = Mensajes()
+                nMessage.id_chat = chat
+                nMessage.usuario = 'USER'
+                nMessage.mensaje = 'QUERY'
+                nMessage.save()
+                respuesta = makeGPTquery(chat,"QUERY")
+                ans = exec_query(respuesta.mensaje)
+                print("RESPUESTA EJECUCION PyVO:",ans)
+        serializer = MensajesSerializer(respuesta)
+        return Response(serializer.data)
+
         
