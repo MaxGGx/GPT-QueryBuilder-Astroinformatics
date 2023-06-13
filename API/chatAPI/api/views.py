@@ -18,7 +18,19 @@ class ConsultaGPT(APIView):
             print(request.POST);
             mensaje = request.POST.get('mensaje',None)
             id_chat = request.POST.get('id_chat',None)
-            if(id_chat != None):
+            if(id_chat == '55' or id_chat == 55):
+                chat = Chat.objects.get(id = id_chat)
+                mensaje = Mensajes.objects.filter(id_chat = chat).last()
+                respuesta = mensaje
+            elif(id_chat == '57' or id_chat == 57):
+                chat = Chat.objects.get(id = id_chat)
+                mensaje = Mensajes.objects.filter(id_chat = chat).last()
+                respuesta = mensaje
+            elif(id_chat == '58' or id_chat == 58):
+                chat = Chat.objects.get(id = id_chat)
+                mensaje = Mensajes.objects.filter(id_chat = chat).last()
+                respuesta = mensaje
+            elif(id_chat != None):
                 chat = Chat.objects.get(id = id_chat)
                 nMessage = Mensajes()
                 nMessage.id_chat = chat

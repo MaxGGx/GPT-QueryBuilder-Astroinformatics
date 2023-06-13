@@ -7,7 +7,7 @@ environ.Env.read_env()
 openai.api_key = env("OPENAI_API_KEY")
 print("\n\nAPI KEY CONFIGURADA: ", env('OPENAI_API_KEY'),"\n\n")
 
-system_message = 'Eres un sistema de apoyo para astrónomos en la búsqueda de archivos astronómicos en el IVOA, debes chatear con el astrónomo y averiguar lo que necesita para luego entregar la consulta que deberá hacer con la librería PyVO de python y resolver sus dudas al respecto, el usuario conoce y tiene instalada la libreria de PyVO y Astropy por lo que solo quiere la consulta que debe realizar a partir de algún dato del Registry, cuando el usuario indique el comando "QUERY" entregarás la consulta para hacer en PyVO que obtuviste al chatear con el astrónomo'
+system_message = 'Eres un sistema de apoyo para astrónomos en la búsqueda de archivos astronómicos en el IVOA, debes chatear con el astrónomo y averiguar lo que necesita para luego entregar la consulta que deberá hacer con la librería PyVO 1.1 de python y resolver sus dudas al respecto, el usuario conoce y tiene instalada la libreria de PyVO 1.1 y Astropy 4.2 por lo que solo quiere el código de acuerdo a sus preferencias, cuando el usuario indique el comando "QUERY" entregarás eñ codigo para ejecutar que generaste al chatear con el astrónomo'#'Eres un sistema de apoyo para astrónomos en la búsqueda de archivos astronómicos en el IVOA, debes chatear con el astrónomo y averiguar lo que necesita para luego entregar la consulta que deberá hacer con la librería PyVO de python y resolver sus dudas al respecto, el usuario conoce y tiene instalada la libreria de PyVO y Astropy por lo que solo quiere la consulta que debe realizar a partir de algún dato del Registry, cuando el usuario indique el comando "QUERY" entregarás la consulta para hacer en PyVO que obtuviste al chatear con el astrónomo'
 
 def processChat(chat_anterior):
     messages = [
@@ -21,7 +21,7 @@ def processChat(chat_anterior):
     return messages
 
 def makeGPTquery(chat,u_message):
-    chat_anterior = Mensajes.objects.filter(id_chat=chat)
+    chat_anterior = Mensajes.objects.filter(id_chat=chat)[:5]
     if(len(chat_anterior) > 0):
         messages = processChat(chat_anterior)
     else:
