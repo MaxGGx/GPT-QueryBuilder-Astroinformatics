@@ -30,8 +30,9 @@
    1. [Componente Frontend](#3.1)
    2. [API GPT](#3.2)
    3. [API PyVO](#3.3)
-4. [Restricciones de uso](#4)
-5. [Asistencia](#5)
+4. [Instrucciones de manejo](#4)
+5. [Restricciones de uso](#5)
+6. [Asistencia](#5)
 
 ***
 
@@ -151,7 +152,19 @@ Este componente corresponde a una API desarrollada en Django utilizando la versi
 
 Su funcionamiento es semejante a la API desarrollada para llevar a cabo el chat, sin embargo, para ejecutar código, solo requiere de un JSON que contenga un mensaje que sea enviado por POST a la url http://localhost:8001/code. Dentro del mensaje, se debe agregar la respuesta obtenida dentro del chat por parte del modelo para luego ser detectado el bloque único de código entregado y ejecutarlo, para finalmente retornar la salida obtenida por el programa, el cual puede ser un error o el resultado de la ejecución.
 
-### 4- Restricciones de uso<a name='4'></a>
+### 4- Instrucciones de manejo<a name='4'></a>
+
+Para el correcto manejo del sistema, se debe hacer uso de la interfaz de Frontend desarrollada para el proyecto, es necesario que se haya ejecutado el proyecto completo de acuerdo a lo indicado en la [sección 2.4](#2.4).  
+
+Para su uso, basta con acceder desde un navegador a la url: http://localhost:3000/ donde podrá visualizar la primera vista del sistema, el cual presentará una barra de navegación la cual indica la vista actual de inicio y la vista correspondiente al chat.  
+
+Para acceder a la funcionalidad de chat, basta con seleccionar la pestaña correspondiente, luego de ello el sistema cargara la vista de char entregando el primer mensaje del Modelo GPT-3.5, haciendo usop de la casilla de texto, se puede escribir un mensaje para poder enviar al modelo, una vez se haya escrito el mensaje, se puede presionar el ícono de envío o igualmente presionar Enter, el sistema comenzara a ejecutar la consulta y comenzará la interacción por medio de Chat.  
+
+Para casos en los que el mensaje entregado por el modelo GPT-3.5 corresponda a un código, se puede ejecutar la consulta presionando el botón al costado derecho del botón de envío para enviar el mensaje con el código al componente de PyVO ejecutar el código y entregar el resultado.  
+
+Para casos especiales se tienen los ejemplos 'EXAMPLE', 'EXAMPLE2' y 'EXAMPLE3' los cuales al ingresarlos en el chat y enviar, entregaran los ejemplos de los casos de prueba para llevaar a cabo la consulta con el componente PyVO.
+
+### 5- Restricciones de uso<a name='5'></a>
 
 Debido a que corresponde a un prototipo, su funcionamiento puede variar dependiendo del dispositivo que ejecute el sistema final, por ello, se recomienda no tener un límite en recursos que impidan la ejecución de los sistemas.  
   
@@ -161,7 +174,7 @@ Para apoyar esto, se implementa una funcionalidad a partir de un comando llamado
   
 Junto a ello, se entrega el comando "EXAMPLE" el cual, al ser enviado por el chat, replica una consulta exitosa para probar la componente de ejecución de código, la cual obtiene una imagen del espectro visible de Júpiter. 
 
-### 5. Asistencia<a name='5'></a>
+### 6. Asistencia<a name='6'></a>
 
 Para mayor asistencia o comentarios al respecto de la ejecución, puede utilizar la herramienta de issues dentro del repositorio del proyecto en GitHub para realizar la notificación de algun inconveniente o brindar ayuda al respecto.
   
