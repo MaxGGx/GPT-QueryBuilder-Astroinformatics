@@ -1,5 +1,7 @@
 # Astroinf-Chat-API
- Desarrollo de API para proyecto de Astroinformática, basado en Django usando ChatGPT
+ Desarrollo de API para proyecto de Astroinformática, basado en Django y React usando ChatGPT
+ Develop of a prototype for a website that uses OpenAI's ChatGPT API for consulting, execute and show queries made into the Virtual Observatory.
+
 ### Instrucciones para el manejo de API:
 - Se requiere tener a mano una key para el uso de la API de chat GPT, acceder al siguiente [link](https://platform.openai.com/account/api-keys) para obtener la clave y poder comenzar a utilizar la API
 - Una vez se tiene la key, crear una variable de entorno ".env" llamada "OPENAI_API_KEY" y colocar el archivo a la altura de "API/chatAPI/api"
@@ -27,5 +29,5 @@
 
 ### Consultas
 
-- Para el manejo de la API o el Front, preguntar a Vito, si no sabe, preguntar a Iñaki
+- Para el manejo de la API o el Front, consultar mediante mensajes de GitHub o email a Iñaki
 
